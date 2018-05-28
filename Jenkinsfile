@@ -11,8 +11,11 @@ pipeline {
     stages {
         stage("Get Sources From SCM") {
             steps {
-                currentBuild.name = "flag: ${params.userFlag}---flag: ${params.releaseRepo}"
-                currentBuild.description = "flag: ${params.userFlag}---flag: ${params.releaseRepo}"
+                script {
+                    currentBuild.displayName = "flag: ${params.userFlag}---flag: ${params.releaseRepo}"
+                    currentBuild.description = "flag: ${params.userFlag}---flag: ${params.releaseRepo}"
+                }
+                
                 echo "flag: ${params.userFlag}"
                 echo "flag: ${params.releaseRepo}"
             }
