@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     parameters {
-        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
-        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
+        string(defaultValue: "TEST", description: 'Enter the Enviroment Name to deploy', name: 'userFlag')
+        string(defaultValue: "TEST", description: 'Enter the service Repository Name', name: 'releaseRepository')
         // choices are newline separated
-        choice(choices: 'CI-Parent1\nCI-Parent2', description: 'Which Repository?', name: 'releaseRepo')
+        choice(choices: 'CI-Parent1\nCI-Parent2', description: 'Select Respository Name from below?', name: 'releaseRepo')
     }
 
     stages {
